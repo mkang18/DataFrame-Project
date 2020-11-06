@@ -254,9 +254,10 @@ public class DataFrame {
 				String[] xtype = types;
 				// create empty data frame
 				DataFrame df = new DataFrame(xheader, xtype);
-				for(int i = 0; i < numRows; i++, retStr += ",") {
+				for(int i = 0; i < numRows; i++) {
 					if(checkOperatorValue(data[i][colNum], operator, value)) {
 						retStr += data[i][colNum];
+						retStr += ",";
 					}
 				}
 				df.append(retStr);
